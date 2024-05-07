@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		1B15339E2BEA6B33006E9A53 /* Events2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15339D2BEA6B33006E9A53 /* Events2024App.swift */; };
-		1B1533A02BEA6B33006E9A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15339F2BEA6B33006E9A53 /* ContentView.swift */; };
+		1B1533A02BEA6B33006E9A53 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15339F2BEA6B33006E9A53 /* SplashView.swift */; };
 		1B1533A22BEA6B34006E9A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1533A12BEA6B34006E9A53 /* Assets.xcassets */; };
 		1B1533A52BEA6B34006E9A53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1533A42BEA6B34006E9A53 /* Preview Assets.xcassets */; };
+		1B1533AC2BEA6D6B006E9A53 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1533AB2BEA6D6B006E9A53 /* EventsView.swift */; };
+		1B1533AE2BEA6F92006E9A53 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1533AD2BEA6F92006E9A53 /* NetworkImage.swift */; };
+		1B1533B02BEA743A006E9A53 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1533AF2BEA743A006E9A53 /* Event.swift */; };
+		1B1533B22BEA7B2D006E9A53 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1533B12BEA7B2D006E9A53 /* User.swift */; };
+		1B1533B52BEA8394006E9A53 /* DBNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1533B42BEA8394006E9A53 /* DBNetworking */; };
+		1B1533B82BEA83B2006E9A53 /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1533B72BEA83B2006E9A53 /* SwiftySound */; };
+		1B1533BA2BEA86E7006E9A53 /* EventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1533B92BEA86E7006E9A53 /* EventsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B15339A2BEA6B33006E9A53 /* Events2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B15339D2BEA6B33006E9A53 /* Events2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events2024App.swift; sourceTree = "<group>"; };
-		1B15339F2BEA6B33006E9A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B15339F2BEA6B33006E9A53 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1B1533A12BEA6B34006E9A53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B1533A42BEA6B34006E9A53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1B1533AB2BEA6D6B006E9A53 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		1B1533AD2BEA6F92006E9A53 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
+		1B1533AF2BEA743A006E9A53 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		1B1533B12BEA7B2D006E9A53 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1B1533B92BEA86E7006E9A53 /* EventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1533B82BEA83B2006E9A53 /* SwiftySound in Frameworks */,
+				1B1533B52BEA8394006E9A53 /* DBNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +66,12 @@
 			isa = PBXGroup;
 			children = (
 				1B15339D2BEA6B33006E9A53 /* Events2024App.swift */,
-				1B15339F2BEA6B33006E9A53 /* ContentView.swift */,
+				1B15339F2BEA6B33006E9A53 /* SplashView.swift */,
+				1B1533AB2BEA6D6B006E9A53 /* EventsView.swift */,
+				1B1533AD2BEA6F92006E9A53 /* NetworkImage.swift */,
+				1B1533AF2BEA743A006E9A53 /* Event.swift */,
+				1B1533B12BEA7B2D006E9A53 /* User.swift */,
+				1B1533B92BEA86E7006E9A53 /* EventsResponse.swift */,
 				1B1533A12BEA6B34006E9A53 /* Assets.xcassets */,
 				1B1533A32BEA6B34006E9A53 /* Preview Content */,
 			);
@@ -83,6 +102,10 @@
 			dependencies = (
 			);
 			name = Events2024;
+			packageProductDependencies = (
+				1B1533B42BEA8394006E9A53 /* DBNetworking */,
+				1B1533B72BEA83B2006E9A53 /* SwiftySound */,
+			);
 			productName = Events2024;
 			productReference = 1B15339A2BEA6B33006E9A53 /* Events2024.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +134,10 @@
 				Base,
 			);
 			mainGroup = 1B1533912BEA6B33006E9A53;
+			packageReferences = (
+				1B1533B32BEA8394006E9A53 /* XCRemoteSwiftPackageReference "DBNetworking" */,
+				1B1533B62BEA83B2006E9A53 /* XCRemoteSwiftPackageReference "SwiftySound" */,
+			);
 			productRefGroup = 1B15339B2BEA6B33006E9A53 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B1533A02BEA6B33006E9A53 /* ContentView.swift in Sources */,
+				1B1533A02BEA6B33006E9A53 /* SplashView.swift in Sources */,
+				1B1533BA2BEA86E7006E9A53 /* EventsResponse.swift in Sources */,
 				1B15339E2BEA6B33006E9A53 /* Events2024App.swift in Sources */,
+				1B1533B22BEA7B2D006E9A53 /* User.swift in Sources */,
+				1B1533AE2BEA6F92006E9A53 /* NetworkImage.swift in Sources */,
+				1B1533B02BEA743A006E9A53 /* Event.swift in Sources */,
+				1B1533AC2BEA6D6B006E9A53 /* EventsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +374,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B1533B32BEA8394006E9A53 /* XCRemoteSwiftPackageReference "DBNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davidebalistreri/DBNetworking";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+		1B1533B62BEA83B2006E9A53 /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B1533B42BEA8394006E9A53 /* DBNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B1533B32BEA8394006E9A53 /* XCRemoteSwiftPackageReference "DBNetworking" */;
+			productName = DBNetworking;
+		};
+		1B1533B72BEA83B2006E9A53 /* SwiftySound */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B1533B62BEA83B2006E9A53 /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			productName = SwiftySound;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1B1533922BEA6B33006E9A53 /* Project object */;
 }

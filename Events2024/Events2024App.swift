@@ -11,7 +11,7 @@ import SwiftUI
 struct Events2024App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
