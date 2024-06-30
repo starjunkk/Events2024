@@ -19,7 +19,6 @@ class Session: ObservableObject {
     /// true : utente connesso
     /// false : utente non connesso
     /// nil : ancora non abbiamo controllato se l'utente è connesso
-    ///
     @Published var isLogged: Bool?
     
     private let databaseKey = "LoggedUser"
@@ -30,13 +29,13 @@ class Session: ObservableObject {
         // Aggiorno le proprietà osservate dalla SplashView
         self.loggedUser = userToSave
         
-        //Salvo l'utente sul database dell'app
-        if userToSave != nil {
+        // Salvo l'utente sul database dell'app
+        if let user = userToSave {
             self.isLogged = true
-            //converto l'oggetto da user a dati, così può salvarlo
-            let data = try? JSONEncoder().encode(userToSave)
-            
-            UserDefaults.standard.set(data!, forKey: databaseKey)
+            // Converto l'oggetto da user a dati, così posso salvarlo
+            if let data = try? JSONEncoder().encode(user) {
+                UserDefaults.standard.set(data, forKey: databaseKey)
+            }
         } else {
             self.isLogged = false
             UserDefaults.standard.removeObject(forKey: databaseKey)
@@ -45,19 +44,14 @@ class Session: ObservableObject {
     
     /// Da utilizzare per caricare l'utente dal database.
     func load() {
-        let data = UserDefaults.standard.data(forKey: databaseKey) ?? Data()
-        
-        let user = try? JSONDecoder().decode(User.self, from: data)
-        
-        if user != nil {
-            self.loggedUser = user
-            self.isLogged = true
-        } else {
+        guard let data = UserDefaults.standard.data(forKey: databaseKey),
+              let user = try? JSONDecoder().decode(User.self, from: data) else {
             self.loggedUser = nil
             self.isLogged = false
+            return
         }
-        }
-                                             
-            
+        
+        self.loggedUser = user
+        self.isLogged = true
     }
-    
+}

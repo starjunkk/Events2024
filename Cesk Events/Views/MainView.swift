@@ -1,22 +1,19 @@
 import SwiftUI
 
-struct HomeView: View {
+struct MainView: View {
     var body: some View {
         TabView {
             EventsView()
-                .withThemeToggle()
                 .tabItem {
                     Label("Eventi", systemImage: "calendar")
                 }
             
             CartView()
-                .withThemeToggle()
                 .tabItem {
                     Label("Carrello", systemImage: "cart.fill")
                 }
             
             ProfileView()
-                .withThemeToggle()
                 .tabItem {
                     Label("Profilo", systemImage: "person.fill")
                 }
@@ -25,7 +22,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
-        .environmentObject(Session.shared)
+    MainView()
         .environmentObject(ThemeManager())
 }

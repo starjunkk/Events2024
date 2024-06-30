@@ -1,20 +1,21 @@
-//
-//  PrimaryTextFieldStyle.swift
-//  Cesk Events
-//
-//  Created by iedstudent on 04/06/24.
-//
-
 import SwiftUI
 
 struct PrimaryTextFieldStyle: TextFieldStyle {
-    func _body(configuration : TextField<Self._Label>) -> some View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
+    var cornerRadius: CGFloat = 10
+    var shadowRadius: CGFloat = 5
+
+    func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
             .padding()
-            .overlay {
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.ui.lines, lineWidth: 0.5)
-            }
+            .background(themeManager.textFieldBackgroundColor)
+            .cornerRadius(cornerRadius)
+            .shadow(color: Color.black.opacity(0.1), radius: shadowRadius, x: 0, y: 3)
+            .overlay(
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .stroke(themeManager.textFieldBorderColor, lineWidth: 1)
+            )
+            .foregroundColor(themeManager.textFieldTextColor)
     }
 }
-

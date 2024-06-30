@@ -21,7 +21,7 @@ struct EventDetailView: View {
                         HStack{
                             HStack{
                                 Image(systemName: "eye.fill")
-                                Text("\(eventToShow.viewsCountv ?? 0)")
+                                Text("\(eventToShow.viewsCount ?? 0)")
                             }
                             HStack{
                                 Image(systemName: "heart.fill")
@@ -123,6 +123,7 @@ struct EventDetailView: View {
                     Spacer()
                     
                     Button(action: {
+                        Cart.shared.add(item: self.eventToShow)
                         showPurchaseAlert.toggle()
                                             }) {
                         Text("Acquista ora")
@@ -134,7 +135,7 @@ struct EventDetailView: View {
                                             }
                                                              .padding()
                                                              .alert(isPresented: $showPurchaseAlert) {
-                                                                 
+                                                 //TODO: L'alert deve essere tipo Vuoi confermare l'acquisto? sì/no
                                                                  DispatchQueue.main.async {
                                                                      Sound.play(file: "alert_sound.mp3")
                                                                  }
@@ -176,7 +177,10 @@ struct EventDetailView: View {
         
         ///Stampa della stringa di risposta
          self.temperature = response ?? "-"
+        
+    
     }
+    
 }
 
 
@@ -185,12 +189,12 @@ struct EventDetailView: View {
     NavigationView {
         EventDetailView( eventToShow: Event(
             id: 1,
-            name: "Evento per la previw",
+            name: "Evento per la preview",
             
             description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.",
-            date: "28",
+            date: "11 JUN",
             coverUrl: "https://imgs.search.brave.com/tvYm9n_Mzx_Jsu6dpzhF39xQbySASInuQFJN5RLtWOQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50aW1lb3V0LmNv/bS9pbWFnZXMvMTA1/MzAyOTYyLzc1MC81/NjIvaW1hZ2UuanBn",
-            
+            // price: ""
             address: "Via Michele Guadagno 29"
             
             
