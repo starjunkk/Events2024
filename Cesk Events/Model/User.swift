@@ -32,6 +32,7 @@ struct User: Codable, Identifiable {
     
             var followingCount: Int?
 
+            var authToken: String?
 }
 
 

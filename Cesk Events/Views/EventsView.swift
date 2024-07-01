@@ -11,6 +11,7 @@ struct EventsView: View {
     @State var isList = true
     
     @EnvironmentObject var themeManager: ThemeManager
+    @State private var isShowingCreateEvent = false
     
     // MARK: - VIEW
     var body: some View {
@@ -98,6 +99,20 @@ struct EventsView: View {
                             Image(systemName: isList ? "square.grid.2x2" : "rectangle.grid.1x2")
                                 .foregroundColor(themeManager.buttonColor) // Applica il colore del tema all'icona
                         }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            isShowingCreateEvent = true
+                        }) {
+                            Image(systemName: "plus")
+                                .foregroundColor(themeManager.buttonColor)
+                        }
+                    }
+                }
+                .sheet(isPresented: $isShowingCreateEvent) {
+                    NavigationView {
+                        CreateEventView()
+                            .environmentObject(themeManager)
                     }
                 }
             }
