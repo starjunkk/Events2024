@@ -23,7 +23,7 @@ struct EventsView: View {
                 ScrollView {
                     LazyVGrid(columns: [
                         GridItem(.adaptive(minimum: isList ? 300 : 150))
-                    ], spacing: 12) {
+                    ], spacing: 16) {
                         ForEach(self.eventsToShow) { event in
                             
                             // UI di ogni elemento
@@ -34,10 +34,11 @@ struct EventsView: View {
                                             .frame(height: 310)
                                             .cornerRadius(16)
                                             .clipShape(Rectangle())
-                                            .padding(.leading, isList ? 16 : 8)
-                                            .padding(.trailing, isList ? 16 : 8)
-                                            .padding(.top, 6)
-                                            .padding(.bottom, 4)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 16)
+                                                    .stroke(Color.white, lineWidth: 1)
+                                            )
+                                            .padding(.all, 4)
                                         
                                         VStack {
                                             Text(StringHelper.formatDate(event.date, in: "dd"))
@@ -67,6 +68,7 @@ struct EventsView: View {
                             }
                         }
                     }
+                    .padding(.horizontal, 8) // Aggiungi padding orizzontale attorno alla griglia
                     .onAppear {
                         Task {
                             await fetchEvents()

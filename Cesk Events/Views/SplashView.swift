@@ -3,6 +3,7 @@ import SwiftUI
 struct SplashView: View {
     @State var isAnimating = false
     @State var isAnimationDone = false
+    @State var progress: CGFloat = 0.0
     @StateObject var session = Session.shared
     
     var body: some View {
@@ -16,6 +17,15 @@ struct SplashView: View {
                         .foregroundStyle(.tint)
                         .scaleEffect(isAnimating ? 1.7 : 10)
                         .opacity(isAnimating ? 1 : 0)
+                    
+                    VStack {
+                        Spacer()
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.ui.orange)
+                            .frame(width: progress * 150, height: 10)
+                            .animation(.linear(duration: 2), value: progress)
+                            .padding(.top, 200)
+                    }
                 }
                 .onAppear {
                     withAnimation(.bouncy(duration: 2)) {
@@ -23,6 +33,9 @@ struct SplashView: View {
                     }
                     
                     Task {
+                        withAnimation(.linear(duration: 2)) {
+                            self.progress = 1.0
+                        }
                         try? await Task.sleep(nanoseconds: 2_000_000_000)
                         
                         // Animazione completata vado all'homepage

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ThemeToggleModifier: ViewModifier {
     @EnvironmentObject var themeManager: ThemeManager
+    // EnvironmentObject è una proprietà speciale in SwiftUI che consente di condividere dati a livello di applicazione in modo semplice e reattivo tra diverse viste.
 
     func body(content: Content) -> some View {
         content

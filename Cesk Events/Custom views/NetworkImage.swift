@@ -34,5 +34,5 @@ struct NetworkImage: View {
 }
 
 #Preview {
-    NetworkImage( url: "https://lh3.googleusercontent.com/proxy/4973GJPvdYPfiMuI9O-MRKtPAKcXrhKPFNkXUBK0Pg-bDBI40daBGPXk1Yuqr-cEZd3j-LdrVqHbSLTZqAXQZFuBt-9nSLC4iwD-bNmuTWgBEUVpMGJ4S3HDvy8CyOemg1PY")
+    NetworkImage( url: "https://imgs.search.brave.com/tvYm9n_Mzx_Jsu6dpzhF39xQbySASInuQFJN5RLtWOQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50aW1lb3V0LmNv/bS9pbWFnZXMvMTA1/MzAyOTYyLzc1MC81/NjIvaW1hZ2UuanBn")
 }

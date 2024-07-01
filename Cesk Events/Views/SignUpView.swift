@@ -29,7 +29,7 @@ struct SignUpView: View {
                     .fontWeight(.bold)
                     .foregroundColor(themeManager.textColor)
 
-                Text("Inserisci i tuoi dati per registrarti")
+                Text("Inserisci i tuoi dati per registrarti.")
                     .font(.callout)
                     .foregroundColor(themeManager.textColor)
                     .padding(.bottom, 8)
