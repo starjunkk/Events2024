@@ -3,8 +3,9 @@ import SwiftUI
 struct ProfileView: View {
     @State private var showSafariView = false
     @EnvironmentObject var themeManager: ThemeManager
+    @State var userToShow = Session.shared.loggedUser
     
-    // Dati dell'evento hardcodato
+    
     let lastEvent = Event(
         id: 1,
         name: "Evento per la preview",
@@ -34,7 +35,7 @@ struct ProfileView: View {
                         .shadow(radius: 10)
                         .padding(.top, 40)
                     
-                    Text("Nome Cognome")
+                    Text(userToShow?.firstName ?? "")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(themeManager.textColor)
@@ -142,7 +143,8 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    Session.shared.load()
+    return ProfileView()
         .environmentObject(ThemeManager())
         .environmentObject(Session.shared)
 }
